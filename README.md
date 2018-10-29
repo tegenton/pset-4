@@ -53,50 +53,160 @@ Problem Set 4 contains 10 exercises, each of which will be written in separate m
 
 ### Exercise 1 (`surroundMe`)
 
-Given two Strings, `out`and `in`, return a new String built by surrounding `in` with the first and last two characters of `out`. Return null if the input specifcations are not met.
+`surroundMe` shoud be a publicly available  method that accepts a pair of `String`s as input, and returns a `String` as output.
+
+Given two `String`s, `out`and `in`, return a new `String` built by surrounding `in` with the first and last two characters of `out`. Return `null` if the following specifcations are not met.
+* `out` and `in` must not be `null`
+* `out` must be exactly 4 characters
+* `in` must be exactly 3 characters
 
 ```
 surroundMe("<<>>", "abc") returns <<abc>>
 surroundMe("[[]]", "xyz") returns [[xyz]]
 surroundMe("abc", "abc") returns null
-surroundMe "(())", "qwerty") returns null
+surroundMe("(())", "qwerty") returns null
+surroundMe(null, "abc") returns null
+surroundMe("<<>>", null) returns null
 ```
 
 ### Exercise 2 (`endsMeet`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`endsMeet` shoud be a publicly available method that accepts a `String` and an `int` as input, and returns a `String` as output.
+
+Given a `String`, `str`, and an `int`, `n`, return a new `String` built by combining the first `n` and last `n` characters of `str`. Return `null` if the following specifcations are not met.
+* `str` must not be `null`
+* `str` must be between 1 and 10 characters (inclusive)
+* `n` must be a positive integer between 1 and the length of `str`
+
+```
+endsMeet("qwerty", 2) returns qwty
+endsMeet("basketball", 3) returns basall
+endsMeet("qwerty", -1) returns null
+endsMeet("basketball", 0) returns null
+endsMeet("qwerty", 9) returns null
+endsMeet("programming", 2) returns null
+endsMeet(null, 1) returns null
+```
 
 ### Exercise 3 (`middleMan`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`middleMan` shoud be a publicly available method that accepts a `String` as input, and returns a `String` as output.
+
+Given a `String`, `str`, return a new 3-character `String` built from the 3 middle characters of `str`. Return `null` if the following specifications are not met.
+* `str` must not be `null`
+* the lenght of `str` must be odd
+
+```
+middleMan("candy") returns and
+middleMan("programming") returns ram
+middleMan("even") returns null
+middleMan(null) returns null
+```
 
 ### Exercise 4 (`doubleVision`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`doubleVision` shoud be a publicly available method that accepts a `String` as input, and returns a `String` as output.
+
+Given a `String`, `str`, return a new `String` built from duplicating every character in `str`. Return `null` if the following specifcations are not met.
+* `str` must not be `null`
+
+```
+doubleVision("qwerty") returns qqwweerrttyy
+doubleVision("a") returns aa
+doubleVision(null) returns null
+```
 
 ### Exercise 5 (`centered`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`centered` shoud be a publicly available method that accepts a pair of `String`s as input, and returns a `boolean` as output.
+
+Given two `String`s, `str` and `target`,  determine whether or not `target` is in the middle of `str`. `target` will be considered in the middle of `str` if the number of characters to its left and right differ by 0 or 1. Return `false` if the following specifcations are not met.
+* `str` and `target` must not be `null`
+* `target` must be exactly 3 characters
+
+```
+centered("candy", "and") returns true
+centered("programming", "ram") returns true
+centered("qwerty", "qwe") returns false
+centered("qwerty", "er") returns false
+centered("qwerty", null) returns false
+centered(null, "abc") returns false
+centered(null, null) returns false
+```
 
 ### Exercise 6 (`upOrDown`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`upOrDown` shoud be a publicly available method that accepts a `double` and a `char` as input, and returns an `int` as output.
+
+Given a decimal value, `number`, and a character, `operation` (representing either round, `r`, floor, `f`, or ceiling, `c`), return the result of the operation as an integer. Return -1 if the following specifcations are not met.
+* `operation` is not within the set [`r`, `f`, `c`]
+
+```
+upOrDown(12.7, 'r') returns 13
+upOrDown(12.2, 'r') returns 12
+upOrDown(12.7, 'f') returns 12
+upOrDown(12.2, 'c') returns 13
+upOrDown(12.7, 'x') returns -1
+```
 
 ### Exercise 7 (`countMe`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`countMe` shoud be a publicly available method that accepts a `String` and a `char` as input, and returns an `int` as output.
+
+Given a `String`, `text`, and a character, `end`, count and return the number of words in `text` that end with `end`. For our purposes, the end of a word will be defined as an alphabetic character followed by a whitespace character (i.e., a space, tab, or line break) or no character at all (i.e., the end of the `String`). Return -1 if the following specifcations are not met.
+* `text` must not be `null`
+* `end` must be in the set [`Aa-Zz`]
+
+```
+countMe("these are just some sample words", 'e') returns 3
+countMe(null, 'n') returns -1
+countMe("and some more sample words", '+') returns -1
+countMe("one more batch of sample words", 'h') returns 1
+```
 
 ### Exercise 8 (`isNotEqual`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`isNotEqual` shoud be a publicly available method that accepts a `String` as input, and returns a `boolean` as output.
+
+Given a `String`, `str`, determine whether the number of case-sensitive appearances of the word `is` equals the number of case-sensitive appearances of the word `not`. Return `false` if the following specifcations are not met.
+* `str` must not be `null`
+
+```
+isNotEqual("is not is not is") returns false
+isNotEqual("is not is not is not") returns true
+isNotEqual(null) returns false
+```
 
 ### Exercise 9 (`triplets`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`triplets` shoud be a publicly available method that accepts a `String` as input, and returns an `int` as output.
+
+Given a `String`, `str`, return the number of triplets. A triplet is defined as a case-sensitive sequence of 3 identical characters in a row. A triplet can overlap, meanning "AAAA" counts as 2 triplets. Return -1 if the following specifcations are not met.
+* `str` must not be `null`
+* `str` must not contain whitespace or non-alphabetic characters
+
+```
+triplets("abbbccccd") returns 3
+triplets("aaabbbbccccc") returns 6
+triplets(null) returns -1
+triplets("abbb1ccc") returns -1
+triplets("aaa bbb") returns -1
+```
 
 ### Exercise 10 (`addMe`)
 
-Requirements listed in source file documentation. Full description to be added later.
+`addMe` shoud be a publicly available method that accepts a `String` and a `boolean` as input, and returns an `int` as output.
+
+Given a `String`, `str`, compute and return either the sum of the digits or the sum of the numbers contained within `str`. If `digits` is true, then sum the digits individually. If it is false, sum the numbers. A number is defined as a 1 or more consecutive digits in `str`. Return -1 if the following specifcations are not met.
+* `str` must not be `null`
+* `str` must not contain whitespace characters
+
+```
+addme("a123b456c789", true) returns 45
+addMe("a123b456c789", false) returns 1368
+addMe(null) returns -1
+addMe("abc 123 def") returns -1
+```
 
 ## Deadline
 
