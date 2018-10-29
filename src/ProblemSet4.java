@@ -21,7 +21,7 @@
 public class ProblemSet4 {
 	
 	public static void main(String[] args) {
-		
+		ProblemSet4 ps4 = new ProblemSet4();
 	}
 	
 	/**
@@ -58,7 +58,11 @@ public class ProblemSet4 {
 	 * @return a String constructed from the first @n and last @n characters of @str
 	 */
 	
-	// your method signature here
+	public String endsMeet(String str, int n) {
+		if (str.length() < 1 || str.length() > 10) return null;
+		if (n > str.length()) return null;
+		return str.substring(0, n) + str.substring(str.length() - n);
+	}
 	
 	/**
 	 * @middleMan is a public method that accepts a single String as input, and
