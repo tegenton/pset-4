@@ -30,6 +30,7 @@ public class ProblemSet4 {
 		System.out.println(ps4.upOrDown(7.3, 'r'));
 		System.out.println(ps4.countMe("test it", 't'));
 		System.out.println(ps4.isNotEqual("is not"));
+		System.out.println(ps4.triplets("AAAab"));
 	}
 	
 	/**
@@ -224,7 +225,7 @@ public class ProblemSet4 {
 	 * @triplets is a public method that accepts a single String as input, and
 	 * returns an integer as output.
 	 * 
-	 * Given a String of case-insenstive letters, return the number of triplets. A triplet
+	 * Given a String of case-senstive letters, return the number of triplets. A triplet
 	 * is defined as a case-sensitive sequence of 3 identical characters in a row. A triplet
 	 * can overlap, meanning AAAA counts as 2 triplets. Return -1 if the input
 	 * specifcations are not met.
@@ -234,7 +235,16 @@ public class ProblemSet4 {
 	 * @return the number of triplets in @str
 	 */
 	
-	// your method signature here
+	public int triplets(String str) {
+		int count = 0;
+		for (int i = 0; i < str.length() - 2; i++) {
+			if (str.charAt(i) == str.charAt(i + 1) && str.charAt(i) == str.charAt(i + 2))
+				count++;
+			else if (str.charAt(i) == ' ' || str.charAt(i) == '	' || str.charAt(i) == '\n')
+				return -1;
+		}
+		return count;
+	}
 	
 	/**
 	 * @addMe is a public method that accepts a String and a boolean as input, and
