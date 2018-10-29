@@ -29,6 +29,7 @@ public class ProblemSet4 {
 		System.out.println(ps4.centered("test it", "st "));
 		System.out.println(ps4.upOrDown(7.3, 'r'));
 		System.out.println(ps4.countMe("test it", 't'));
+		System.out.println(ps4.isNotEqual("is not"));
 	}
 	
 	/**
@@ -197,7 +198,7 @@ public class ProblemSet4 {
 	 * returns a boolean as output.
 	 * 
 	 * Given a String of text, determine whether the number of case-sensitive appearances
-	 * of the word is equals the number of case-sensitive appearances of not. Return
+	 * of the word "is" equals the number of case-sensitive appearances of "not". Return
 	 * false if the input specifcations are not met.
 	 * 
 	 * @param str - a String of text containing 0 or more appearances of is and not
@@ -205,7 +206,19 @@ public class ProblemSet4 {
 	 * @return true if the appearances of is == the appearances of not; false otherwise
 	 */
 	
-	// your method signature here
+	public boolean isNotEqual(String str) {
+		int isCount = 0;
+		int notCount = 0;
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.substring(i, i + 2).equals("is"))
+				isCount++;
+			else if (i < str.length() - 2) {
+				if (str.substring(i, i + 3).equals("not"))
+					notCount++;
+			}
+		}
+		return isCount == notCount;
+	}
 	
 	/**
 	 * @triplets is a public method that accepts a single String as input, and
