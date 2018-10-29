@@ -38,7 +38,11 @@ public class ProblemSet4 {
 	 * @return a String constructed from @in and @out of the format AAXYZBB
 	 */
 	
-	// your method signature here
+	public String surroundMe(String out, String in) {
+		if (out.length() != 4) return null;
+		if (in.length() != 3) return null;
+		return out.substring(0, 2) + in + out.substring(2);
+	}
 	
 	/**
 	 * @endsMeet is a public method that accepts a String and an integer as input, and
