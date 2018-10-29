@@ -28,6 +28,7 @@ public class ProblemSet4 {
 		System.out.println(ps4.doubleVision("test it"));
 		System.out.println(ps4.centered("test it", "st "));
 		System.out.println(ps4.upOrDown(7.3, 'r'));
+		System.out.println(ps4.countMe("test it", 't'));
 	}
 	
 	/**
@@ -180,7 +181,16 @@ public class ProblemSet4 {
 	 * @return the number of words in @text that end with @end
 	 */
 	
-	// your method signature here
+	public int countMe(String text, char end) {
+		int count = 0;
+		String wordEnd;
+		for (int i = 0; i < text.length() - 1; i++) {
+			wordEnd = text.substring(i, i+2);
+			if (wordEnd.equals(end + " ") || wordEnd.equals(end + "	") || wordEnd.equals(end + "\n"))
+				count++;
+		}
+		return count;
+	}
 	
 	/**
 	 * @isNotEqual is a public method that accepts a String as input, and
