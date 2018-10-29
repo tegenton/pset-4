@@ -77,7 +77,11 @@ public class ProblemSet4 {
 	 * @return a 3-character String constructed from the middle 3 characters of @str
 	 */
 	
-	// your method signature here
+	public String middleMan(String str) {
+		if (str.length() % 2 == 0) return null;
+		int middle = str.length() / 2;
+		return str.substring(middle - 1, middle + 2);
+	}
 	
 	/**
 	 * @doubleVision is a public method that accepts a single String as input, and
