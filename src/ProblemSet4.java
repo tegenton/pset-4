@@ -119,7 +119,10 @@ public class ProblemSet4 {
 	 * @return true if @target is in the middle of @str and false if it is not
 	 */
 	
-	// your method signature here
+	public boolean centered(String str, String target) {
+		int middle = str.length() / 2;
+		return str.substring(middle - 1, middle + 2).equals(target);
+	}
 	
 	/**
 	 * @upOrDown is a public method that accepts a decimal value and a character as
