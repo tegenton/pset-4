@@ -27,6 +27,7 @@ public class ProblemSet4 {
 		System.out.println(ps4.middleMan("test it"));
 		System.out.println(ps4.doubleVision("test it"));
 		System.out.println(ps4.centered("test it", "st "));
+		System.out.println(ps4.upOrDown(7.3, 'r'));
 	}
 	
 	/**
@@ -139,12 +140,29 @@ public class ProblemSet4 {
 	 * operation as an @int. Return -1 if the input specifcations are not met.
 	 * 
 	 * @param number - a decimal value
-	 * @param operation - a @char in the set [+, -, f, c]
+	 * @param operation - a @char in the set [r, f, c]
 	 * 
 	 * @return the result of the operation as an @int
 	 */
 	
-	// your method signature here
+	public int upOrDown(double number, char operation) {
+		int result = 0;
+		switch(operation) {
+		case 'r':
+			result = (int) Math.round(number);
+			break;
+		case 'f':
+			result = (int) Math.floor(number);
+			break;
+		case 'c':
+			result = (int) Math.ceil(number);
+			break;
+		default:
+			result = -1;
+			break;
+		}
+		return result;
+	}
 	
 	/**
 	 * @countMe is a public method that accepts a String and a character as input,
