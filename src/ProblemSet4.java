@@ -89,14 +89,20 @@ public class ProblemSet4 {
 	 * 
 	 * Given a String whose length is at least 1, return a String built from duplicating
 	 * every character from the original String. Return null if the input
-	 * specifcations are not met.
+	 * specifications are not met.
 	 * 
 	 * @param str - a String whose length is at least 1 in the format ABC
 	 * 
 	 * @return a String where each character in @str is duplicated in the format AABBCC
 	 */
 	
-	// your method signature here
+	public String doubleVision(String str) {
+		if (str.length() < 1) return null;
+		String doubleString = new String();
+		for (int i = 0; i < str.length(); i++)
+			doubleString += str.charAt(i) + str.charAt(i);
+		return doubleString;
+	}
 	
 	/**
 	 * @centered is a public method that accepts a single String as input, and
