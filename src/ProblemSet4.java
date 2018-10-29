@@ -238,10 +238,10 @@ public class ProblemSet4 {
 	public int triplets(String str) {
 		int count = 0;
 		for (int i = 0; i < str.length() - 2; i++) {
+			if (Character.isDigit(str.charAt(i)))
+				return -1;
 			if (str.charAt(i) == str.charAt(i + 1) && str.charAt(i) == str.charAt(i + 2))
 				count++;
-			else if (str.charAt(i) == ' ' || str.charAt(i) == '	' || str.charAt(i) == '\n')
-				return -1;
 		}
 		return count;
 	}
@@ -261,5 +261,16 @@ public class ProblemSet4 {
 	 * @return the sum of the digits or numbers as specified by @digits
 	 */
 	
-	// your method signature here
+	public int addMe(String str, boolean digits) {
+		int sum = 0;
+		if (digits) {
+			for (int i = 0; i < str.length(); i++)
+				if (Character.isDigit(str.charAt(i)))
+					sum += (int) str.charAt(i);
+		}
+		else {
+			
+		}
+		return sum;
+	}
 }
