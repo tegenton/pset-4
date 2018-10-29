@@ -22,6 +22,11 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
+		System.out.println(ps4.surroundMe("teit", "st "));
+		System.out.println(ps4.endsMeet("test it", 2));
+		System.out.println(ps4.middleMan("test it"));
+		System.out.println(ps4.doubleVision("test it"));
+		System.out.println(ps4.centered("test it", "st "));
 	}
 	
 	/**
@@ -100,7 +105,7 @@ public class ProblemSet4 {
 		if (str.length() < 1) return null;
 		String doubleString = new String();
 		for (int i = 0; i < str.length(); i++)
-			doubleString += str.charAt(i) + str.charAt(i);
+			doubleString += str.charAt(i) + "" + str.charAt(i);
 		return doubleString;
 	}
 	
@@ -120,6 +125,7 @@ public class ProblemSet4 {
 	 */
 	
 	public boolean centered(String str, String target) {
+		if (target.length() != 3) return false;
 		int middle = str.length() / 2;
 		return str.substring(middle - 1, middle + 2).equals(target);
 	}
