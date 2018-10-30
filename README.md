@@ -76,7 +76,7 @@ surroundMe("<<>>", null) returns null
 Given a `String`, `str`, and an `int`, `n`, return a new `String` built by combining the first `n` and last `n` characters of `str`. Return `null` if the following specifcations are not met.
 * `str` must not be `null`
 * `str` must be between 1 and 10 characters (inclusive)
-* `n` must be a positive integer between 1 and the length of `str`
+* `n` must be a positive integer between 1 and the length of `str` (inclusive)
 
 ```
 endsMeet("qwerty", 2) returns qwty
