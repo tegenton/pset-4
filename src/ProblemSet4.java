@@ -193,17 +193,17 @@ public class ProblemSet4 {
 		for (int i = 0; i < text.length() - 1; i++) {
 			if (!Character.isAlphabetic(text.charAt(i)) && !Character.isWhitespace(text.charAt(i)))
 				return -1;
-			
+
 			wordEnd = text.substring(i, i+2);
 			if (Character.isWhitespace(wordEnd.charAt(1)) && wordEnd.charAt(0) == end)
 				count++;
 		}
-		
+
 		if (!Character.isAlphabetic(text.charAt(text.length() - 1)) && !Character.isWhitespace(text.charAt(text.length() - 1)))
 			return -1;
 		else if (text.charAt(text.length() - 1) == end)
 			count++;
-		
+
 		return count;
 	}
 
