@@ -31,6 +31,7 @@ public class ProblemSet4 {
 		System.out.println(ps4.countMe("test it", 't'));
 		System.out.println(ps4.isNotEqual("is not"));
 		System.out.println(ps4.triplets("AAAab"));
+		System.out.println(ps4.addMe("123", false));
 	}
 	
 	/**
@@ -130,8 +131,11 @@ public class ProblemSet4 {
 	
 	public boolean centered(String str, String target) {
 		if (target.length() != 3) return false;
-		int middle = str.length() / 2;
-		return str.substring(middle - 1, middle + 2).equals(target);
+		double middle = str.length() / 2.0;
+		if ((int) middle == middle)
+			return str.substring((int) middle - 2, (int) middle + 1).equals(target) || str.substring( (int) middle - 1, (int) middle + 2).equals(target);
+		else
+			return str.substring((int) middle - 1, (int) middle + 2).equals(target);
 	}
 	
 	/**
@@ -188,7 +192,7 @@ public class ProblemSet4 {
 		String wordEnd;
 		for (int i = 0; i < text.length() - 1; i++) {
 			wordEnd = text.substring(i, i+2);
-			if (wordEnd.equals(end + " ") || wordEnd.equals(end + "	") || wordEnd.equals(end + "\n"))
+			if (Character.isWhitespace(wordEnd.charAt(1)))
 				count++;
 		}
 		return count;
@@ -262,15 +266,26 @@ public class ProblemSet4 {
 	 */
 	
 	public int addMe(String str, boolean digits) {
-		int sum = 0;
-		if (digits) {
-			for (int i = 0; i < str.length(); i++)
-				if (Character.isDigit(str.charAt(i)))
-					sum += (int) str.charAt(i);
-		}
-		else {
-			
-		}
-		return sum;
-	}
+        int sum = 0;
+        if (digits) {
+            for (int i = 0; i < str.length(); i++)
+                if (Character.isDigit(str.charAt(i)))
+                    sum += Character.getNumericValue(str.charAt(i));
+        }
+        else {
+            int temp = 0;
+            for (int i = 0; i < str.length(); i++) {
+                if (Character.isDigit(str.charAt(i))) {
+                    temp *= 10;
+                    temp += Character.getNumericValue(str.charAt(i));;
+                }
+                else {
+                    sum += temp;
+                    temp = 0;
+                }
+            }
+            sum += temp;
+        }
+        return sum;
+    }
 }
