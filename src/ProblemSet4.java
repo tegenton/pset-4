@@ -27,11 +27,11 @@ public class ProblemSet4 {
 		System.out.println(ps4.middleMan("test it"));
 		System.out.println(ps4.doubleVision("test it"));
 		System.out.println(ps4.centered("test it", "st "));
-		System.out.println(ps4.upOrDown(7.3, 'r'));
+		System.out.println(ps4.upOrDown(7.3, 'c'));
 		System.out.println(ps4.countMe("test it", 't'));
 		System.out.println(ps4.isNotEqual("is not"));
-		System.out.println(ps4.triplets("AAAab"));
-		System.out.println(ps4.addMe("123", false));
+		System.out.println(ps4.triplets("AAAaaaab"));
+		System.out.println(ps4.addMe("123h54", false));
 	}
 
 	/**
