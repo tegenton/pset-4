@@ -188,6 +188,8 @@ public class ProblemSet4 {
 	 */
 
 	public int countMe(String text, char end) {
+		if (!Character.isAlphabetic(end))
+			return -1;
 		int count = 0;
 		String wordEnd;
 		for (int i = 0; i < text.length() - 1; i++) {
@@ -251,7 +253,7 @@ public class ProblemSet4 {
 	public int triplets(String str) {
 		int count = 0;
 		for (int i = 0; i < str.length() - 2; i++) {
-			if (Character.isDigit(str.charAt(i)))
+			if (!Character.isAlphabetic(str.charAt(i)))
 				return -1;
 			if (str.charAt(i) == str.charAt(i + 1) && str.charAt(i) == str.charAt(i + 2))
 				count++;
