@@ -198,7 +198,7 @@ triplets("aaa bbb") returns -1
 
 `addMe` shoud be a publicly available method that accepts a `String` and a `boolean` as input, and returns an `int` as output.
 
-Given a `String`, `str`, compute and return either the sum of the digits or the sum of the numbers contained within `str`. If `digits` is true, then sum the digits individually. If it is false, sum the numbers. A number is defined as a 1 or more consecutive digits in `str`. Return -1 if the following specifcations are not met.
+Given a `String`, `str`, and a `boolean`, `digits`, compute and return either the sum of the digits or the sum of the numbers contained within `str`. If `digits` is true, then sum the digits individually. If it is false, sum the numbers. A number is defined as a 1 or more consecutive digits in `str`. Return -1 if the following specifcations are not met.
 * `str` must not be `null`
 * `str` must not contain whitespace characters
 
