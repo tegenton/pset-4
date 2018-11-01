@@ -94,7 +94,7 @@ endsMeet(null, 1) returns null
 
 Given a `String`, `str`, return a new 3-character `String` built from the 3 middle characters of `str`. Return `null` if the following specifications are not met.
 * `str` must not be `null`
-* the lenght of `str` must be odd
+* the length of `str` must be odd
 
 ```
 middleMan("candy") returns and
