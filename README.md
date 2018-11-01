@@ -159,7 +159,7 @@ Given a `String`, `text`, and a character, `end`, count and return the number of
 * `end` must be in the set [`Aa-Zz`]
 
 ```
-countMe("these are just some sample words", 'e') returns 3
+countMe("these are just some sample words", 'e') returns 4
 countMe(null, 'n') returns -1
 countMe("and some more sample words", '+') returns -1
 countMe("one more batch of sample words", 'h') returns 1
