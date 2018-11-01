@@ -169,7 +169,7 @@ countMe("one more batch of sample words", 'h') returns 1
 
 `isNotEqual` shoud be a publicly available method that accepts a `String` as input, and returns a `boolean` as output.
 
-Given a `String`, `str`, determine whether the number of case-sensitive appearances of the word `is` equals the number of case-sensitive appearances of the word `not`. Return `false` if the following specifcations are not met.
+Given a `String`, `str`, determine whether the number of case-insensitive appearances of the word `is` equals the number of case-insensitive appearances of the word `not`. Return `false` if the following specifcations are not met.
 * `str` must not be `null`
 
 ```
