@@ -95,6 +95,7 @@ endsMeet(null, 1) returns null
 Given a `String`, `str`, return a new 3-character `String` built from the 3 middle characters of `str`. Return `null` if the following specifications are not met.
 * `str` must not be `null`
 * the length of `str` must be odd
+* `str` must be at least 3 characters
 
 ```
 middleMan("candy") returns and
@@ -204,8 +205,8 @@ Given a `String`, `str`, compute and return either the sum of the digits or the 
 ```
 addme("a123b456c789", true) returns 45
 addMe("a123b456c789", false) returns 1368
-addMe(null) returns -1
-addMe("abc 123 def") returns -1
+addMe(null, true) returns -1
+addMe("abc 123 def", false) returns -1
 ```
 
 ## Deadline
