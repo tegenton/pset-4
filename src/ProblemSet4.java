@@ -22,16 +22,16 @@ public class ProblemSet4 {
 
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.surroundMe("teit", "st "));
-		System.out.println(ps4.endsMeet("test it", 2));
-		System.out.println(ps4.middleMan("test it"));
-		System.out.println(ps4.doubleVision("test it"));
-		System.out.println(ps4.centered("test it", "st "));
-		System.out.println(ps4.upOrDown(7.3, 'c'));
-		System.out.println(ps4.countMe("test it", 't'));
-		System.out.println(ps4.isNotEqual("is not not is isnot"));
-		System.out.println(ps4.triplets("AAAaaaab"));
-		System.out.println(ps4.addMe("123h54", false));
+		System.out.println(ps4.surroundMe("<<>>", null));
+		System.out.println(ps4.endsMeet(null, 1));
+		System.out.println(ps4.middleMan(null));
+		System.out.println(ps4.doubleVision(null));
+		System.out.println(ps4.centered(null, null));
+		System.out.println(ps4.upOrDown(12.7, 'x'));
+		System.out.println(ps4.countMe("one more batch of sample words", 'h'));
+		System.out.println(ps4.isNotEqual(null));
+		System.out.println(ps4.triplets("aaa bbb"));
+		System.out.println(ps4.addMe("abc 123 def", false));
 	}
 
 	/**
@@ -49,8 +49,8 @@ public class ProblemSet4 {
 	 */
 
 	public String surroundMe(String out, String in) {
-		if (out.length() != 4) return null;
-		if (in.length() != 3) return null;
+		if (out == null || out.length() != 4) return null;
+		if (in == null || in.length() != 3) return null;
 		return out.substring(0, 2) + in + out.substring(2);
 	}
 
@@ -69,8 +69,8 @@ public class ProblemSet4 {
 	 */
 
 	public String endsMeet(String str, int n) {
-		if (str.length() < 1 || str.length() > 10) return null;
-		if (n > str.length()) return null;
+		if (str == null || str.length() < 1 || str.length() > 10) return null;
+		if (n > str.length() || n < 1) return null;
 		return str.substring(0, n) + str.substring(str.length() - n);
 	}
 
@@ -88,7 +88,7 @@ public class ProblemSet4 {
 	 */
 
 	public String middleMan(String str) {
-		if (str.length() % 2 == 0) return null;
+		if (str == null || str.length() % 2 == 0) return null;
 		int middle = str.length() / 2;
 		return str.substring(middle - 1, middle + 2);
 	}
@@ -107,7 +107,7 @@ public class ProblemSet4 {
 	 */
 
 	public String doubleVision(String str) {
-		if (str.length() < 1) return null;
+		if (str == null || str.length() < 1) return null;
 		String doubleString = new String();
 		for (int i = 0; i < str.length(); i++)
 			doubleString += str.charAt(i) + "" + str.charAt(i);
@@ -130,7 +130,7 @@ public class ProblemSet4 {
 	 */
 
 	public boolean centered(String str, String target) {
-		if (target.length() != 3) return false;
+		if (target == null || str == null || target.length() != 3) return false;
 		double middle = str.length() / 2.0;
 		if ((int) middle == middle)
 			return str.substring((int) middle - 2, (int) middle + 1).equals(target) || str.substring( (int) middle - 1, (int) middle + 2).equals(target);
@@ -188,7 +188,7 @@ public class ProblemSet4 {
 	 */
 
 	public int countMe(String text, char end) {
-		if (!Character.isAlphabetic(end))
+		if (!Character.isAlphabetic(end) || text == null)
 			return -1;
 		int count = 0;
 		String wordEnd;
@@ -223,6 +223,7 @@ public class ProblemSet4 {
 	 */
 
 	public boolean isNotEqual(String str) {
+		if (str == null) return false;
 		int isCount = 0;
 		int notCount = 0;
 		for (int i = 0; i < str.length() - 1; i++) {
@@ -251,6 +252,7 @@ public class ProblemSet4 {
 	 */
 
 	public int triplets(String str) {
+		if (str == null) return -1;
 		int count = 0;
 		for (int i = 0; i < str.length() - 2; i++) {
 			if (!Character.isAlphabetic(str.charAt(i)))
@@ -277,11 +279,14 @@ public class ProblemSet4 {
 	 */
 
 	public int addMe(String str, boolean digits) {
+		if (str == null) return -1;
 		int sum = 0;
 		if (digits) {
 			for (int i = 0; i < str.length(); i++)
 				if (Character.isDigit(str.charAt(i)))
 					sum += Character.getNumericValue(str.charAt(i));
+				else if (!Character.isAlphabetic(str.charAt(i)))
+					return -1;
 		}
 		else {
 			int temp = 0;
@@ -290,6 +295,8 @@ public class ProblemSet4 {
 					temp *= 10;
 					temp += Character.getNumericValue(str.charAt(i));;
 				}
+				else if (!Character.isAlphabetic(str.charAt(i)))
+					return -1;
 				else {
 					sum += temp;
 					temp = 0;
