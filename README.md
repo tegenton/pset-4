@@ -212,7 +212,7 @@ addMe("abc 123 def", false) returns -1
 
 ## Deadline
 
-Your Canvas submission is due at or before 11:59pm on Sunday, November 4, 2018.
+Your Canvas submission is due at or before 11:59pm on Monday, November 5, 2018.
 
 ### Submission Requirements
 
