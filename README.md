@@ -76,7 +76,7 @@ surroundMe("<<>>", null) returns null
 Given a `String`, `str`, and an `int`, `n`, return a new `String` built by combining the first `n` and last `n` characters of `str`. Return `null` if the following specifcations are not met.
 * `str` must not be `null`
 * `str` must be between 1 and 10 characters (inclusive)
-* `n` must be a positive integer between 1 and the length of `str`
+* `n` must be a positive integer between 1 and the length of `str` (inclusive)
 
 ```
 endsMeet("qwerty", 2) returns qwty
@@ -94,7 +94,8 @@ endsMeet(null, 1) returns null
 
 Given a `String`, `str`, return a new 3-character `String` built from the 3 middle characters of `str`. Return `null` if the following specifications are not met.
 * `str` must not be `null`
-* the lenght of `str` must be odd
+* the length of `str` must be odd
+* `str` must be at least 3 characters
 
 ```
 middleMan("candy") returns and
@@ -122,6 +123,7 @@ doubleVision(null) returns null
 
 Given two `String`s, `str` and `target`,  determine whether or not `target` is in the middle of `str`. `target` will be considered in the middle of `str` if the number of characters to its left and right differ by 0 or 1. Return `false` if the following specifcations are not met.
 * `str` and `target` must not be `null`
+* `str` must be at least 3 characters
 * `target` must be exactly 3 characters
 
 ```
@@ -138,8 +140,8 @@ centered(null, null) returns false
 
 `upOrDown` shoud be a publicly available method that accepts a `double` and a `char` as input, and returns an `int` as output.
 
-Given a decimal value, `number`, and a character, `operation` (representing either round, `r`, floor, `f`, or ceiling, `c`), return the result of the operation as an integer. Return -1 if the following specifcations are not met.
-* `operation` is not within the set [`r`, `f`, `c`]
+Given a decimal value, `number`, and a character, `operation` (representing either round, `r`, floor, `f`, or ceiling, `c`), return the result of the operation as an integer. Return `-1` if the following specifcations are not met.
+* `operation` must be within the set [`r`, `f`, `c`]
 
 ```
 upOrDown(12.7, 'r') returns 13
@@ -153,12 +155,12 @@ upOrDown(12.7, 'x') returns -1
 
 `countMe` shoud be a publicly available method that accepts a `String` and a `char` as input, and returns an `int` as output.
 
-Given a `String`, `text`, and a character, `end`, count and return the number of words in `text` that end with `end`. For our purposes, the end of a word will be defined as an alphabetic character followed by a whitespace character (i.e., a space, tab, or line break) or no character at all (i.e., the end of the `String`). Return -1 if the following specifcations are not met.
+Given a `String`, `text`, and a character, `end`, count and return the number of words in `text` that end with `end`. For our purposes, the end of a word will be defined as an alphabetic character followed by a whitespace character (i.e., a space, tab, or line break) or no character at all (i.e., the end of the `String`). Return `-1` if the following specifcations are not met.
 * `text` must not be `null`
 * `end` must be in the set [`Aa-Zz`]
 
 ```
-countMe("these are just some sample words", 'e') returns 3
+countMe("these are just some sample words", 'e') returns 4
 countMe(null, 'n') returns -1
 countMe("and some more sample words", '+') returns -1
 countMe("one more batch of sample words", 'h') returns 1
@@ -168,7 +170,7 @@ countMe("one more batch of sample words", 'h') returns 1
 
 `isNotEqual` shoud be a publicly available method that accepts a `String` as input, and returns a `boolean` as output.
 
-Given a `String`, `str`, determine whether the number of case-sensitive appearances of the word `is` equals the number of case-sensitive appearances of the word `not`. Return `false` if the following specifcations are not met.
+Given a `String`, `str`, determine whether the number of case-insensitive appearances of the word `is` equals the number of case-insensitive appearances of the word `not`. Return `false` if the following specifcations are not met.
 * `str` must not be `null`
 
 ```
@@ -181,7 +183,7 @@ isNotEqual(null) returns false
 
 `triplets` shoud be a publicly available method that accepts a `String` as input, and returns an `int` as output.
 
-Given a `String`, `str`, return the number of triplets. A triplet is defined as a case-sensitive sequence of 3 identical characters in a row. A triplet can overlap, meanning "AAAA" counts as 2 triplets. Return -1 if the following specifcations are not met.
+Given a `String`, `str`, return the number of triplets. A triplet is defined as a sequence of 3 identical characters in a row. Triplets are case-sensitive, meaning `AAa` is not triplet. Triplets can also overlap, meanning `AAAA` counts as 2 triplets. Return `-1` if the following specifcations are not met.
 * `str` must not be `null`
 * `str` must not contain whitespace or non-alphabetic characters
 
@@ -197,20 +199,48 @@ triplets("aaa bbb") returns -1
 
 `addMe` shoud be a publicly available method that accepts a `String` and a `boolean` as input, and returns an `int` as output.
 
-Given a `String`, `str`, compute and return either the sum of the digits or the sum of the numbers contained within `str`. If `digits` is true, then sum the digits individually. If it is false, sum the numbers. A number is defined as a 1 or more consecutive digits in `str`. Return -1 if the following specifcations are not met.
+Given a `String`, `str`, and a `boolean`, `digits`, compute and return either the sum of the digits or the sum of the numbers contained within `str`. If `digits` is true, then sum the digits individually. If it is false, sum the numbers. A number is defined as a 1 or more consecutive digits in `str`. Return `-1` if the following specifcations are not met.
 * `str` must not be `null`
 * `str` must not contain whitespace characters
 
 ```
-addme("a123b456c789", true) returns 45
+addMe("a123b456c789", true) returns 45
 addMe("a123b456c789", false) returns 1368
-addMe(null) returns -1
-addMe("abc 123 def") returns -1
+addMe(null, true) returns -1
+addMe("abc 123 def", false) returns -1
 ```
+
+## Tests
+
+Included in this repository is a JAR file, which allows you to test each of your solutions. JAR files essentially package the executable file(s) of a program, allowing you to run the program without actually possessing the source code. You can execute the JAR file from Git Bash using the following command format.
+```
+java -jar pset4-tester.jar methodName firstParameter [secondParameter]
+```
+You must always supply a valid method name. The number and types of parameters will, of course, be dependent on the method you wish to execute. The square brackets indicate that the `secondParameter` is optional, since some methods only require one parameter.
+
+Here are a few examples to run actual tests.
+```
+java -jar pset4-tester.jar surroundMe [[]] xyz
+java -jar pset4-tester.jar endsMeet qwerty 2
+java -jar pset4-tester.jar middleMan candy
+java -jar pset4-tester.jar doubleVision qwerty
+java -jar pset4-tester.jar centered candy and
+java -jar pset4-tester.jar upOrDown 12.7 r
+java -jar pset4-tester.jar countMe sample e
+java -jar pset4-tester.jar isNotEqual isnotis
+java -jar pset4-tester.jar triplets abbbccccd
+java -jar pset4-tester.jar addMe a123b456c789 t
+```
+Git Bash will sometimes complain about spaces in your parameters, as well as certain special characters (for example, angled brackets and parentheses). If and when you encounter this, simply wrap the parameter in double-quotes like so.
+```
+java -jar pset4-tester.java surroundMe "<<>>" abc
+java -jar pset4-tester.jar countMe "these are just some sample words" e
+```
+It is your responsibility to thoroughly test your code. The grading script will randomly generate 20 test cases. You will receive ¼ of a point for each test case your code successfully passes.
 
 ## Deadline
 
-Your Canvas submission is due at or before 11:59pm on Sunday, November 4, 2018.
+Your Canvas submission is due at or before 11:59pm on Monday, November 5, 2018.
 
 ### Submission Requirements
 
