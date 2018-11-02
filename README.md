@@ -123,6 +123,7 @@ doubleVision(null) returns null
 
 Given two `String`s, `str` and `target`,  determine whether or not `target` is in the middle of `str`. `target` will be considered in the middle of `str` if the number of characters to its left and right differ by 0 or 1. Return `false` if the following specifcations are not met.
 * `str` and `target` must not be `null`
+* `str` must be at least 3 characters
 * `target` must be exactly 3 characters
 
 ```
