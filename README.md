@@ -141,7 +141,7 @@ centered(null, null) returns false
 `upOrDown` shoud be a publicly available method that accepts a `double` and a `char` as input, and returns an `int` as output.
 
 Given a decimal value, `number`, and a character, `operation` (representing either round, `r`, floor, `f`, or ceiling, `c`), return the result of the operation as an integer. Return `-1` if the following specifcations are not met.
-* `operation` is not within the set [`r`, `f`, `c`]
+* `operation` must be within the set [`r`, `f`, `c`]
 
 ```
 upOrDown(12.7, 'r') returns 13
