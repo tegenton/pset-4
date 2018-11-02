@@ -29,7 +29,7 @@ public class ProblemSet4 {
 		System.out.println(ps4.centered("test it", "st "));
 		System.out.println(ps4.upOrDown(7.3, 'c'));
 		System.out.println(ps4.countMe("test it", 't'));
-		System.out.println(ps4.isNotEqual("is not"));
+		System.out.println(ps4.isNotEqual("is not not is isnot"));
 		System.out.println(ps4.triplets("AAAaaaab"));
 		System.out.println(ps4.addMe("123h54", false));
 	}
